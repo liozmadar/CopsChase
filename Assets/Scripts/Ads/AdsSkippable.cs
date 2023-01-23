@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements; //Assuming you imported the Advertisements from the "Package Manager"
@@ -26,4 +26,4 @@ public class AdsSkippable : MonoBehaviour
         }
         else print("Interstitial ad not ready at the moment! Please try again later!");
     }
-}*/
+}

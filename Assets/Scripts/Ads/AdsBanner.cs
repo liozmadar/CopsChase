@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements; //Assuming you imported the Advertisements from the "Package Manager"
@@ -18,7 +18,7 @@ public class AdsBanner : MonoBehaviour
     {
         Advertisement.Initialize(gameId, testMode);
         StartCoroutine(ShowBannerWhenInitialized());
-        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER); //Positions Banner where you want -
+        Advertisement.Banner.SetPosition(BannerPosition.TOP_CENTER); //Positions Banner where you want -
     }
 
     IEnumerator ShowBannerWhenInitialized()
@@ -29,4 +29,4 @@ public class AdsBanner : MonoBehaviour
         }
         Advertisement.Banner.Show(mySurfacingId);
     }
-}*/
+}
