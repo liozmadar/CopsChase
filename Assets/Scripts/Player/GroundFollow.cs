@@ -4,10 +4,10 @@ using UnityEngine;
 public class GroundFollow : MonoBehaviour
 {
     public GameObject player;
-    public GameObject groundFloor;
-    float spawnFloorTimer = 5;
-    public GameObject newGroundFloor;
-    public List<GameObject> newGroundFloors;
+    private GameObject groundFloor;
+    private float spawnFloorTimer = 5;
+    private GameObject newGroundFloor;
+    private List<GameObject> newGroundFloors;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,18 @@ public class GroundFollow : MonoBehaviour
         // SpawnGroundFloorTimer();
         GroundFloorFollowPlayer();
     }
+    void GroundFloorFollowPlayer()
+    {
+        if (GameObject.FindGameObjectWithTag("Player") == isActiveAndEnabled)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+
+            var posX = player.transform.position.x;
+            var posZ = player.transform.position.z;
+            var newPos = new Vector3(posX, 0, posZ);
+            gameObject.transform.position = newPos;
+        }
+    }/*
     void SpawnGroundFloorTimer()
     {
         if (GameObject.FindGameObjectWithTag("Player") == isActiveAndEnabled)
@@ -39,22 +51,11 @@ public class GroundFollow : MonoBehaviour
             }
         }
     }
-    void GroundFloorFollowPlayer()
-    {
-        if (GameObject.FindGameObjectWithTag("Player") == isActiveAndEnabled)
-        {
-            player = GameObject.FindGameObjectWithTag("Player");
-
-            var posX = player.transform.position.x;
-            var posZ = player.transform.position.z;
-            var newPos = new Vector3(posX, 0, posZ);
-            gameObject.transform.position = newPos;
-        }
-    }
+    
     void SpawnGroundFloor()
     {
         Vector3 newPos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
         newGroundFloor = Instantiate(groundFloor, newPos, Quaternion.identity);
         newGroundFloors.Add(newGroundFloor);
-    }
+    }*/
 }

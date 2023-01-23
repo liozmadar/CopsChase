@@ -1380,9 +1380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391f6e4f58f40af49b7973ec890ee676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5090837
-  mySurfacingId: Interstitial_Android
-  testMode: 1
 --- !u!114 &233333658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,9 +1392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490ca65d1c31ecd4085c00c975e610fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5090837
-  mySurfacingId: Rewarded_Android
-  testMode: 1
 --- !u!114 &233333659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1410,9 +1404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd7715ca621f424fb373d455ef11244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5090837
-  mySurfacingId: Banner_Android
-  testMode: 1
 --- !u!1 &242435128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3417,7 +3408,6 @@ Transform:
   - {fileID: 233333656}
   - {fileID: 99375851}
   - {fileID: 1907305569}
-  - {fileID: 1817477568}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8335,11 +8325,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086989493}
   m_CullTransparentMesh: 1
---- !u!1 &1106369062 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1070260741698065077, guid: a8de9f79678199941bc4127489d21d7a, type: 3}
-  m_PrefabInstance: {fileID: 1070260740591732883}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1120610672
 GameObject:
   m_ObjectHideFlags: 0
@@ -13427,55 +13412,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815419003}
   m_CullTransparentMesh: 1
---- !u!1 &1817477566
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1817477568}
-  - component: {fileID: 1817477567}
-  m_Layer: 0
-  m_Name: GroundspawnTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1817477567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817477566}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af273899d70fb94ca639797aa5d98c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  groundFloor: {fileID: 1070260741698065077, guid: a8de9f79678199941bc4127489d21d7a, type: 3}
-  newGroundFloor: {fileID: 0}
-  newGroundFloors:
-  - {fileID: 1106369062}
---- !u!4 &1817477568
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817477566}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -87.89024, y: 446.0185, z: -234.54459}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 460187026}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1845447229
 GameObject:
   m_ObjectHideFlags: 0
@@ -14162,9 +14098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cad666c42d9f7148aa581bf70bbd684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  googleButtonText: {fileID: 0}
-  googleButtonImage: {fileID: 0}
-  loader: {fileID: 0}
 --- !u!1 &1942954841
 GameObject:
   m_ObjectHideFlags: 0
