@@ -1792,7 +1792,7 @@ MonoBehaviour:
   - name: Car1
     id: 1
     carLockImage: {fileID: 781266403}
-    carCostNumber: 100
+    carCostNumber: 5000
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   - name: Car2
     id: 2
     carLockImage: {fileID: 1377363192}
-    carCostNumber: 200
+    carCostNumber: 6000
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
@@ -1808,7 +1808,7 @@ MonoBehaviour:
   - name: Car3
     id: 3
     carLockImage: {fileID: 418699972}
-    carCostNumber: 400
+    carCostNumber: 7000
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   - name: Car4
     id: 4
     carLockImage: {fileID: 1240189512}
-    carCostNumber: 800
+    carCostNumber: 8000
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
@@ -1824,7 +1824,7 @@ MonoBehaviour:
   - name: Car5
     id: 5
     carLockImage: {fileID: 125526286}
-    carCostNumber: 1600
+    carCostNumber: 9000
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
@@ -2493,7 +2493,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +500
+  m_text: +2500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
