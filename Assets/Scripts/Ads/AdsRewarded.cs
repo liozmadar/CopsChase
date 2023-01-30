@@ -15,8 +15,11 @@ public class AdsRewarded : MonoBehaviour, IUnityAdsListener
 
     void Start()
     {
-        Advertisement.AddListener(this);    //Used to check if Player COMPLETED the ad
-        Advertisement.Initialize(gameId, testMode);     // Initialize the Ads listener and service:
+        if (!Advertisement.IsReady(mySurfacingId))  //this if only if there was a reload the scene
+        {
+            Advertisement.AddListener(this);    //Used to check if Player COMPLETED the ad
+            Advertisement.Initialize(gameId, testMode);     // Initialize the Ads listener and service:
+        }
     }
 
     public void ShowRewardedVideo() //Shows The add when this method is called - 
