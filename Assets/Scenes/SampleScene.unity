@@ -464,7 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   versionUrl: https://pastebin.com/raw/fCMqbdwa
   gameLinkInPlayStore: https://play.google.com/store/apps/details?id=com.DefaultCompany.CopsChase
-  currentVersion: 4
+  currentVersion: 5
   latestVersion: 
   versionPopupWindow: {fileID: 216440236}
 --- !u!1 &118921933
