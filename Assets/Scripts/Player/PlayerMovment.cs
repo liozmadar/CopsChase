@@ -109,9 +109,10 @@ public class PlayerMovment : MonoBehaviour
     {
         if (collision.gameObject.tag == "EnemyPolice" && stopCheckIfCollide)
         {
+            Debug.Log("first");
             if (currentinvincibleTime <= 0)
             {
-                currentinvincibleTime = 1;
+              //  currentinvincibleTime = 1;
                 life--;
                 if (life < 3)
                 {
@@ -123,6 +124,7 @@ public class PlayerMovment : MonoBehaviour
                 }
                 if (life <= 0)
                 {
+                    Debug.Log("hey");
                     GameObject ExplosionPrefab = Instantiate(explosionEffect, transform.position, Quaternion.identity);
                     Destroy(ExplosionPrefab, 2);
                     for (int a = 0; a < 1; a++)
@@ -136,10 +138,34 @@ public class PlayerMovment : MonoBehaviour
                     GameManager.instance.allCopsGoAway = true;
                     GameManager.instance.StopTheGameHelper = true;
                     GameManager.instance.startTheGame = false;
-                    CanvasManager.instance.EndGameCardLose();
+
+
+                    if (!CanvasManager.instance.oneTimeContinueBool)
+                    {
+                        CanvasManager.instance.oneTimeContinue.SetActive(true);
+                        CanvasManager.instance.oneTimeContinueBool = true;
+                    }
+                    else
+                    {
+                        CanvasManager.instance.EndGameCardLose();
+                        CanvasManager.instance.oneTimeContinueBool = false;
+                    }
                 }
             }
         }
+    }
+    public void AfterClickedContinue()
+    {
+        for (int a = 0; a < 1; a++)
+        {
+            transform.GetChild(a).gameObject.SetActive(true);
+        }
+        rb.constraints = RigidbodyConstraints.None;
+        stopCheckIfCollide = true;
+        GameManager.instance.allCopsGoAway = false;
+        GameManager.instance.StopTheGameHelper = false;
+        GameManager.instance.startTheGame = true;
+        life = 1;
     }
     public void MoveLeft()
     {

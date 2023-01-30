@@ -8,29 +8,32 @@ using UnityEngine.EventSystems;
 
 public class CanvasManager : MonoBehaviour
 {
+    [Header("Components")]
     public static CanvasManager instance;
-
     public TextMeshProUGUI headerText;
 
+    [Header("GamePlay UI")]
     public TextMeshProUGUI timerScore;
     public TextMeshProUGUI copsDestroyed;
     public TextMeshProUGUI coneCollected;
 
     //The gameobjects on the gamePlayScreenUI
+    [Header("Gameobjects on the game play UI")]
     public GameObject playScreenTimer;
     public GameObject playScreenCops;
     public GameObject playScreenCones;
     public GameObject playScreenBoost;
 
+    [Header("End game card UI")]
     public TextMeshProUGUI bestScoreText;
     public int bestScoreCount;
     public TextMeshProUGUI mostCopsDestroyedText;
     public int mostCopsDestroyedCount;
     public TextMeshProUGUI mostConeCollectedText;
     public int mostConeCollectedCount;
-
     public TextMeshProUGUI coinsEarndFromConeCollected;
 
+    [Header("New scores")]
     public GameObject newScore;
     public bool newScoreBool;
     public GameObject newCops;
@@ -39,6 +42,7 @@ public class CanvasManager : MonoBehaviour
     public bool newConesBool;
 
     //Home screen UI
+    [Header("All screens UI")]
     public GameObject buyCarsScreenUI;
     public GameObject homeScreenUI;
     public GameObject playerCarsChange;
@@ -49,23 +53,28 @@ public class CanvasManager : MonoBehaviour
     public bool adButtonBool;
     public bool resetButtonBool;
 
+    [Header("")]
     public GameObject onlyOnMobileAdImage;
     private bool onlyOnMobileAdImageBool;
 
     public GameObject clickOnAdButton;
-
     private int endGameCardClickToPlayAgain;
 
+    [Header("Game tutorial")]
     public GameObject GameTutorialText;
     public TextMeshProUGUI ConesTutorialText;
     public bool ConesTutorialTextBool;
 
-
+    [Header("Coins")]
     public int coinsFromCops;
     public TextMeshProUGUI TotalCoinsInGame;
     public TextMeshProUGUI coinsFromCopsEndGameCardText;
     public int conesAndCopsEarnSum;
     public TextMeshProUGUI conesAndCopsEarnSumText;
+
+    [Header("One time continue")]
+    public GameObject oneTimeContinue;
+    public bool oneTimeContinueBool;
 
     AsyncOperation loadingOperation;
     //
@@ -90,7 +99,7 @@ public class CanvasManager : MonoBehaviour
         buyCarsScreenUI.SetActive(false);
         endGameCard.SetActive(false);
         homeScreenUI.SetActive(true);
-
+        oneTimeContinue.SetActive(false);
 
         //Get the prefs of 1 = close the homeUI , or 2 = keep the homeUI
         endGameCardClickToPlayAgain = PlayerPrefs.GetInt("PlayAgain");
@@ -247,6 +256,7 @@ public class CanvasManager : MonoBehaviour
             newCops.SetActive(true);
         }
     }
+
     public void EndGameCardWin()
     {
         Invoke("DelayTheEndCardWin", 1);
@@ -272,6 +282,19 @@ public class CanvasManager : MonoBehaviour
         ScoreSystem.instance.totalScorePoints += conesAndCopsEarnSum;
         PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
     }
+
+    public void ContinueGame()
+    {
+        //Continue the game
+        PlayerMovment.instance.AfterClickedContinue();
+        oneTimeContinue.SetActive(false);
+    }
+    public void DontContinueGame()
+    {
+        EndGameCardLose();
+        oneTimeContinue.SetActive(false);
+    }
+
     public void EndGameCardLose()
     {
         Invoke("DelayTheEndCardLose", 1);
