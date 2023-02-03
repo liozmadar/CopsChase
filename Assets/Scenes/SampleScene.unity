@@ -428,6 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 99375851}
   - component: {fileID: 99375852}
+  - component: {fileID: 99375853}
   m_Layer: 0
   m_Name: VersionChecker
   m_TagString: Untagged
@@ -467,6 +468,18 @@ MonoBehaviour:
   currentVersion: 6
   latestVersion: 
   versionPopupWindow: {fileID: 216440236}
+--- !u!114 &99375853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99375850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498afcbc4902b3249ab3c08687cc6eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &118921933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,7 +1529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 233333656}
   - component: {fileID: 233333659}
-  - component: {fileID: 233333658}
+  - component: {fileID: 233333660}
   - component: {fileID: 233333657}
   m_Layer: 0
   m_Name: AdsManager
@@ -1555,21 +1568,6 @@ MonoBehaviour:
   gameId: 5133147
   mySurfacingId: Interstitial_Android
   testMode: 0
---- !u!114 &233333658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233333655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490ca65d1c31ecd4085c00c975e610fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameId: 5133147
-  mySurfacingId: Rewarded_Android
-  testMode: 0
 --- !u!114 &233333659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1585,6 +1583,21 @@ MonoBehaviour:
   gameId: 5133147
   mySurfacingId: Banner_Android
   testMode: 0
+--- !u!114 &233333660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233333655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490ca65d1c31ecd4085c00c975e610fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameId: 5133147
+  mySurfacingId: Rewarded_Android
+  testMode: 1
 --- !u!1 &242435128
 GameObject:
   m_ObjectHideFlags: 0
@@ -11550,7 +11563,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 233333658}
+      - m_Target: {fileID: 233333660}
         m_TargetAssemblyTypeName: AdsRewarded, Assembly-CSharp
         m_MethodName: ShowRewardedVideo
         m_Mode: 1
