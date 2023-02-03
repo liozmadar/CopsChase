@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements; //Assuming you imported the Advertisements from the "Package Manager"
-public class AdsRewarded : MonoBehaviour, IUnityAdsListener
+public class AdsRewarded1 : MonoBehaviour, IUnityAdsListener
 {
 #if UNITY_IOS
     public string gameId = "Your-Apple-ID";
     public string mySurfacingId = "Rewarded_iOS";
 #elif UNITY_ANDROID
     public string gameId = "Your-Google-ID";
-    public string mySurfacingId = "Rewarded_Android";
+    public string mySurfacingId2 = "Rewarded_Android_2";
 #endif
     public bool testMode = true; //Leave this as True UNTIL you release your game!!!
 
     void Start()
     {
-        if (!Advertisement.IsReady(mySurfacingId))  //this if only if there was a reload the scene
+        if (!Advertisement.IsReady(mySurfacingId2))//this is only if the scene was reload(so there wont be 2 or more ads initialize)
         {
             Advertisement.AddListener(this);    //Used to check if Player COMPLETED the ad
             Advertisement.Initialize(gameId, testMode);     // Initialize the Ads listener and service:
@@ -24,7 +24,7 @@ public class AdsRewarded : MonoBehaviour, IUnityAdsListener
 
     public void ShowRewardedVideo() //Shows The add when this method is called - 
     {   // Check if UnityAds ready before calling Show method:
-        if (Advertisement.IsReady(mySurfacingId)) Advertisement.Show(mySurfacingId);
+        if (Advertisement.IsReady(mySurfacingId2)) Advertisement.Show(mySurfacingId2);
         else Debug.Log("Rewarded video is not ready at the moment! Please try again later!");
     }
     public void OnUnityAdsDidFinish(string surfacingId, ShowResult showResult) // Implement IUnityAdsListener interface methods:
@@ -32,10 +32,6 @@ public class AdsRewarded : MonoBehaviour, IUnityAdsListener
         if (showResult == ShowResult.Finished)
         {
             print("The Ad finished!!!");
-            int RewardedAdCoins = ScoreSystem.instance.totalScorePoints += 2500;
-            PlayerPrefs.SetInt("totalScorePoints", RewardedAdCoins);
-            CanvasManager.instance.adButton.SetActive(false);
-            CanvasManager.instance.adButtonBool = false;
         }
         else if (showResult == ShowResult.Skipped)
         {
@@ -45,7 +41,7 @@ public class AdsRewarded : MonoBehaviour, IUnityAdsListener
     }
     public void OnUnityAdsReady(string surfacingId) //Activates when ADD is ready
     {// If the ready Ad Unit or legacy Placement is rewarded, show the ad:        
-        if (surfacingId == mySurfacingId)
+        if (surfacingId == mySurfacingId2)
         {// Optional actions to take when theAd Unit or legacy Placement becomes ready (for example, enable the rewarded ads button)
             print("The Ad is ready - Lord Vader");
         }
