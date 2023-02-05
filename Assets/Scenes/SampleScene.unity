@@ -1598,6 +1598,7 @@ MonoBehaviour:
   gameId: 5133147
   mySurfacingId: Rewarded_Android
   testMode: 0
+  clickedOnAdForCoinsBool: 0
 --- !u!1 &242435128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,6 +1956,7 @@ MonoBehaviour:
   conesAndCopsEarnSumText: {fileID: 403210681}
   oneTimeContinue: {fileID: 1203807490}
   oneTimeContinueBool: 0
+  clickedOnAdForCoinsBool: 0
 --- !u!114 &255711917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16807,9 +16809,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 255711916}
-        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
-        m_MethodName: ContinueGame
+      - m_Target: {fileID: 233333657}
+        m_TargetAssemblyTypeName: AdsSkippable, Assembly-CSharp
+        m_MethodName: ShowInterstitialAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
