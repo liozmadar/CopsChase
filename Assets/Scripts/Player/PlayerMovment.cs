@@ -25,6 +25,8 @@ public class PlayerMovment : MonoBehaviour
 
     public TrailRenderer trailRenderer;
 
+    private int numberOfGamesBeforeReviews;
+
 
     // Start is called before the first frame update
     void Start()
@@ -111,7 +113,7 @@ public class PlayerMovment : MonoBehaviour
         {
             if (currentinvincibleTime <= 0)
             {
-              //  currentinvincibleTime = 1;
+                //  currentinvincibleTime = 1;
                 life--;
                 if (life < 3)
                 {
@@ -147,6 +149,15 @@ public class PlayerMovment : MonoBehaviour
                     {
                         CanvasManager.instance.EndGameCardLose();
                         CanvasManager.instance.oneTimeContinueBool = false;
+                    }
+
+                    //player destroyed count, and review(let the player rate the game) after 2/3 time
+                    numberOfGamesBeforeReviews = PlayerPrefs.GetInt("NumberOfPlayerDestoyed");
+                    numberOfGamesBeforeReviews++;
+                    PlayerPrefs.SetInt("NumberOfPlayerDestoyed", numberOfGamesBeforeReviews);
+                    if (numberOfGamesBeforeReviews >= 2 && numberOfGamesBeforeReviews <= 3)
+                    {
+                        InAppReviews.instance.LaunchReview();
                     }
                 }
             }
