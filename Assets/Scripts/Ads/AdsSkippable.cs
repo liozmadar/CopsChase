@@ -21,6 +21,7 @@ public class AdsSkippable : MonoBehaviour
     {
         if (Advertisement.IsReady()) // Check if UnityAds ready before calling Show method:
         {
+            CanvasManager.instance.clickedOnAdForCoinsBool = false;
             Advertisement.Show(mySurfacingId);
             print("You're watching an AD!!!");
         }

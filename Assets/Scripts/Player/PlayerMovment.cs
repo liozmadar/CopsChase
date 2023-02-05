@@ -109,7 +109,6 @@ public class PlayerMovment : MonoBehaviour
     {
         if (collision.gameObject.tag == "EnemyPolice" && stopCheckIfCollide)
         {
-            Debug.Log("first");
             if (currentinvincibleTime <= 0)
             {
               //  currentinvincibleTime = 1;
@@ -124,7 +123,6 @@ public class PlayerMovment : MonoBehaviour
                 }
                 if (life <= 0)
                 {
-                    Debug.Log("hey");
                     GameObject ExplosionPrefab = Instantiate(explosionEffect, transform.position, Quaternion.identity);
                     Destroy(ExplosionPrefab, 2);
                     for (int a = 0; a < 1; a++)

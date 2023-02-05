@@ -1598,7 +1598,7 @@ MonoBehaviour:
   gameId: 5133147
   mySurfacingId: Rewarded_Android
   testMode: 0
-  clickedOnAdForCoinsBool: 0
+  clickedOnAdForCoinsBool: 1
 --- !u!1 &242435128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,7 +1956,6 @@ MonoBehaviour:
   conesAndCopsEarnSumText: {fileID: 403210681}
   oneTimeContinue: {fileID: 1203807490}
   oneTimeContinueBool: 0
-  clickedOnAdForCoinsBool: 0
 --- !u!114 &255711917
 MonoBehaviour:
   m_ObjectHideFlags: 0

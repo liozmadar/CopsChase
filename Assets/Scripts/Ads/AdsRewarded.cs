@@ -13,7 +13,7 @@ public class AdsRewarded : MonoBehaviour, IUnityAdsListener
 #endif
     public bool testMode = true; //Leave this as True UNTIL you release your game!!!
 
-    public bool clickedOnAdForCoinsBool;
+   // public bool clickedOnAdForCoinsBool = true;
 
     void Start()
     {
@@ -28,11 +28,10 @@ public class AdsRewarded : MonoBehaviour, IUnityAdsListener
     {   // Check if UnityAds ready before calling Show method:
         if (Advertisement.IsReady(mySurfacingId)) Advertisement.Show(mySurfacingId);
         else Debug.Log("Rewarded video is not ready at the moment! Please try again later!");
-        clickedOnAdForCoinsBool = true;
     }
     public void OnUnityAdsDidFinish(string surfacingId, ShowResult showResult) // Implement IUnityAdsListener interface methods:
     {
-        if (showResult == ShowResult.Finished && clickedOnAdForCoinsBool)
+        if (showResult == ShowResult.Finished && CanvasManager.instance.clickedOnAdForCoinsBool)
         {
             print("The Ad finished!!!");
             int RewardedAdCoins = ScoreSystem.instance.totalScorePoints += 2500;
@@ -40,7 +39,7 @@ public class AdsRewarded : MonoBehaviour, IUnityAdsListener
             CanvasManager.instance.adButton.SetActive(false);
             CanvasManager.instance.adButtonBool = false;
 
-            clickedOnAdForCoinsBool = false;
+           // clickedOnAdForCoinsBool = false;
         }
         else if (showResult == ShowResult.Finished)
         {

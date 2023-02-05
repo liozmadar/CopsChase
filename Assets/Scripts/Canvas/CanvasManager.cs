@@ -79,6 +79,9 @@ public class CanvasManager : MonoBehaviour
     AsyncOperation loadingOperation;
     //
 
+
+    public bool clickedOnAdForCoinsBool = true;
+
     // Start is called before the first frame update
     void Start()
     {
