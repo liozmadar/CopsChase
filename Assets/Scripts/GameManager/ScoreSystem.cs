@@ -17,13 +17,28 @@ public class ScoreSystem : MonoBehaviour
     void Start()
     {
         instance = this;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         totalScorePoints = PlayerPrefs.GetInt("totalScorePoints");
-        totalScorePointsTextHomeScreen.text = totalScorePoints.ToString();
-        totalScorePointsTextCarsScreen.text = totalScorePoints.ToString();
+       
+        if (totalScorePoints >= 10000)
+        {
+            string newInt =  totalScorePoints / 1000 + "k";
+
+            totalScorePointsTextHomeScreen.text = newInt;
+            totalScorePointsTextCarsScreen.text = newInt;
+
+           // Debug.Log(newInt);
+        }
+        else
+        {
+            totalScorePointsTextHomeScreen.text = totalScorePoints.ToString();
+            totalScorePointsTextCarsScreen.text = totalScorePoints.ToString();
+        }
     }
 }
