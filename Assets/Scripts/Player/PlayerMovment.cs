@@ -25,7 +25,7 @@ public class PlayerMovment : MonoBehaviour
 
     public TrailRenderer trailRenderer;
 
-    private int numberOfGamesBeforeReviews;
+    public int numberOfGamesBeforeReviews;
 
 
     // Start is called before the first frame update
@@ -155,9 +155,9 @@ public class PlayerMovment : MonoBehaviour
                     numberOfGamesBeforeReviews = PlayerPrefs.GetInt("NumberOfPlayerDestoyed");
                     numberOfGamesBeforeReviews++;
                     PlayerPrefs.SetInt("NumberOfPlayerDestoyed", numberOfGamesBeforeReviews);
-                    if (numberOfGamesBeforeReviews >= 2 && numberOfGamesBeforeReviews <= 3)
+                    if (numberOfGamesBeforeReviews >= 2)
                     {
-                        InAppReviews.instance.LaunchReview();
+                        StartCoroutine(InAppReviews.instance.LaunchReview());
                     }
                 }
             }
